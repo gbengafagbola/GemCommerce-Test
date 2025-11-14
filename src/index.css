@@ -1,0 +1,479 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 13 83% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 75% 92%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 200 75% 92%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 30% 85%;
+    --input: 200 30% 85%;
+    --ring: 13 83% 61%;
+
+    --radius: 0.75rem;
+
+    /* Brand Colors */
+    --brand-orange: 13 83% 61%;
+    --brand-blue: 200 75% 92%;
+    --text-dark: 0 0% 15%;
+    --text-gray: 0 0% 45%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+    /* Transitions */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Separator */
+    --separator-light: 240 10% 90%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 13 83% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-title {
+    @apply text-center mb-6 md:mb-8 text-foreground;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 120%;
+    letter-spacing: 0.25px;
+  }
+
+  /* Feature Card Styles */
+  .feature-icon-circle {
+    @apply rounded-full flex items-center justify-center;
+    width: 60px;
+    height: 60px;
+  }
+
+  .feature-icon {
+    @apply object-contain;
+    width: 36px;
+    height: 36px;
+  }
+
+  .feature-title {
+    @apply mb-1.5 md:mb-2;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #161723;
+  }
+
+  .feature-description {
+    @apply text-muted-foreground;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .feature-description {
+      width: 286px;
+      height: 48px;
+    }
+  }
+
+  /* CTA Button Styles */
+  .cta-button {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-5 md:py-6 text-base md:text-lg rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg font-semibold;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .cta-button {
+      width: 515px;
+    }
+  }
+
+  /* Payment Logo Styles */
+  .payment-logo {
+    @apply object-contain;
+    height: 20px;
+    width: auto;
+  }
+
+  @media (min-width: 768px) {
+    .payment-logo {
+      height: 24px;
+    }
+  }
+
+  /* Guarantee Text Styles */
+  .guarantee-text {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+  }
+
+  /* Nutrition Section Styles */
+  .nutrition-content {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1121px) {
+    .nutrition-content {
+      width: 100%;
+      max-width: 570px;
+      height: auto;
+      padding-right: 24px;
+    }
+  }
+
+  @media (min-width: 1122px) {
+    .nutrition-content {
+      width: 570px;
+      height: 571px;
+      padding-right: 32px;
+    }
+  }
+
+  .nutrition-stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    .nutrition-stats {
+      gap: 8px;
+    }
+  }
+
+  .nutrition-image-container {
+    @apply overflow-hidden shadow-2xl;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .nutrition-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1121px) {
+    .nutrition-image-container {
+      width: 100%;
+      max-width: 570px;
+      aspect-ratio: 1 / 1;
+    }
+
+    .nutrition-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 1122px) {
+    .nutrition-image-container {
+      width: 570px;
+      height: 570px;
+      max-width: 570px;
+    }
+
+    .nutrition-image {
+      width: 570px;
+      height: 570px;
+      object-fit: cover;
+    }
+  }
+
+  .nutrition-button {
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1121px) {
+    .nutrition-button {
+      width: 100%;
+      max-width: 538px;
+    }
+  }
+
+  @media (min-width: 1122px) {
+    .nutrition-button {
+      width: 538px;
+    }
+  }
+
+  /* Gut Health Section Styles */
+  .gut-health-image-container {
+    @apply overflow-hidden shadow-2xl;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .gut-health-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1121px) {
+    .gut-health-image-container {
+      width: 100%;
+      max-width: 570px;
+      aspect-ratio: 570 / 480;
+    }
+
+    .gut-health-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 1122px) {
+    .gut-health-image-container {
+      width: 570px;
+      height: 480px;
+      max-width: 570px;
+    }
+
+    .gut-health-image {
+      width: 570px;
+      height: 480px;
+      object-fit: cover;
+    }
+  }
+
+  .gut-health-heading {
+    @apply text-foreground;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 120%;
+    letter-spacing: 0.25px;
+  }
+
+  .gut-health-description {
+    @apply text-muted-foreground;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: 640px) {
+    .gut-health-description {
+      font-size: 16px;
+    }
+  }
+
+  /* Prebiotics Section Styles */
+  .prebiotics-image-container {
+    @apply overflow-hidden shadow-2xl;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .prebiotics-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1121px) {
+    .prebiotics-image-container {
+      width: 100%;
+      max-width: 570px;
+      aspect-ratio: 570 / 480;
+    }
+
+    .prebiotics-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 1122px) {
+    .prebiotics-image-container {
+      width: 570px;
+      height: 480px;
+      max-width: 570px;
+    }
+
+    .prebiotics-image {
+      width: 570px;
+      height: 480px;
+      object-fit: cover;
+    }
+  }
+
+  .prebiotics-heading {
+    @apply text-foreground;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 120%;
+    letter-spacing: 0.25px;
+  }
+
+  .prebiotics-description {
+    @apply text-muted-foreground;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: 640px) {
+    .prebiotics-description {
+      font-size: 16px;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-on-scroll-delay-1 {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out 0.1s forwards;
+  }
+
+  .animate-on-scroll-scale {
+    opacity: 0;
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Image hover effects */
+  .nutrition-image-container,
+  .gut-health-image-container,
+  .prebiotics-image-container {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .nutrition-image-container:hover,
+  .gut-health-image-container:hover,
+  .prebiotics-image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+  }
+}
