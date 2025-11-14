@@ -62,7 +62,13 @@ export const NutritionSection = () => {
 
             <div className="relative animate-on-scroll-scale">
               <div className="nutrition-image-container">
-                <img src={dogWithHappyDogBite} alt="Happy dog enjoying nutritious food" className="nutrition-image" />
+                <img 
+                  src={dogWithHappyDogBite} 
+                  alt="Happy dog enjoying nutritious food" 
+                  className="nutrition-image"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>

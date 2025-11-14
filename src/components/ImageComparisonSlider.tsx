@@ -102,6 +102,7 @@ export const ImageComparisonSlider = () => {
           alt="Dry dog food kibble"
           className="w-full h-full object-cover object-center"
           draggable={false}
+          decoding="async"
         />
       </div>
 
@@ -120,6 +121,7 @@ export const ImageComparisonSlider = () => {
             transform: "rotate(-180deg)",
           }}
           draggable={false}
+          decoding="async"
         />
       </div>
 

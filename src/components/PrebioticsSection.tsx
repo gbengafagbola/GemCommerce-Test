@@ -22,6 +22,8 @@ export const PrebioticsSection = () => {
                   src={dogFood}
                   alt="Premium dog food kibble"
                   className="prebiotics-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

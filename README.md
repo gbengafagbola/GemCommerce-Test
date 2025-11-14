@@ -1,5 +1,9 @@
 # Premium Dog Nutrition Landing Page
 
+**🌐 Live Demo:** [https://gemcommerce-test.onrender.com](https://gemcommerce-test.onrender.com)
+
+> **Note:** The site is hosted on Render and may require a cold start (10-30 seconds) on first load if it hasn't been accessed recently.
+
 This is a responsive landing page built for a dog nutrition brand. It features an interactive image comparison slider, animated sections, and a clean, modern design.
 
 ## Submission Details
@@ -89,6 +93,8 @@ This was the trickiest part to build. The slider uses React hooks to track mouse
 
 The key challenge was making it work smoothly on both desktop (mouse) and mobile (touch), which required handling both event types and preventing default behaviors where needed.
 
+**Image Rotation:** The `dog-food-bowl-A.png` image is rotated 180 degrees counter-clockwise using CSS `transform: rotate(-180deg)` to achieve the perfect positioning as specified in the design mockup.
+
 ### Responsive Design
 
 I went with a mobile-first approach using Tailwind's breakpoints. The grid layouts switch from single column on mobile to two/three columns on larger screens. For typography, I used CSS `clamp()` so the text scales smoothly between breakpoints instead of jumping at specific widths.
@@ -108,6 +114,8 @@ Using Inter Tight from Google Fonts. I loaded weights 400, 500, 600, and 700. Th
 ### Performance & Accessibility
 
 Since this is a static landing page, I kept it simple - no global state management needed. All animations use `transform` and `opacity` which are GPU-accelerated for smooth performance.
+
+**Image Optimization:** Images below the fold use native lazy loading (`loading="lazy"`) to improve initial page load times. The hero images load immediately since they're above the fold, while images in the Nutrition, Gut Health, and Prebiotics sections are lazy-loaded. All images use `decoding="async"` for non-blocking image decoding, which improves page responsiveness.
 
 For accessibility, I used semantic HTML, proper alt text on images, and made sure interactive elements have focus states. The slider works with both mouse and touch, and keyboard navigation is supported.
 
@@ -145,8 +153,3 @@ Tested and working on latest versions of Chrome, Firefox, Safari, and Edge.
 ## Customization
 
 Colors are defined as CSS variables in `src/index.css` - just update the HSL values there. Typography can be changed by modifying the `font-family` declarations in the component styles.
-
----
-
-**Questions?** Contact justin@gempages.help
-

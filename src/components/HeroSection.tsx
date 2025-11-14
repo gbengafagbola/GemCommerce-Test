@@ -90,11 +90,11 @@ export const HeroSection = () => {
               </div>
               <span className="text-muted-foreground/50 hidden sm:inline">•</span>
               <div className="flex items-center gap-2 md:gap-3 flex-wrap justify-center">
-                <img src={paymentPaypal} alt="PayPal" className="payment-logo" />
-                <img src={paymentVisa} alt="Visa" className="payment-logo" />
-                <img src={paymentMaster} alt="Mastercard" className="payment-logo" />
-                <img src={paymentApple} alt="Apple Pay" className="payment-logo" />
-                <img src={paymentGoogle} alt="Google Pay" className="payment-logo" />
+                <img src={paymentPaypal} alt="PayPal" className="payment-logo" loading="lazy" decoding="async" />
+                <img src={paymentVisa} alt="Visa" className="payment-logo" loading="lazy" decoding="async" />
+                <img src={paymentMaster} alt="Mastercard" className="payment-logo" loading="lazy" decoding="async" />
+                <img src={paymentApple} alt="Apple Pay" className="payment-logo" loading="lazy" decoding="async" />
+                <img src={paymentGoogle} alt="Google Pay" className="payment-logo" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -122,6 +122,7 @@ const FeatureCard = ({ icon, title, description, bgColor }: FeatureCardProps) =>
           src={icon} 
           alt={title}
           className="feature-icon"
+          decoding="async"
         />
       </div>
       <div className="flex-1 min-w-0">

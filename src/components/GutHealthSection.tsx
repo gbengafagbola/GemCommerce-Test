@@ -12,6 +12,8 @@ export const GutHealthSection = () => {
                   src={dogsEating}
                   alt="Dogs eating nutritious food"
                   className="gut-health-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
